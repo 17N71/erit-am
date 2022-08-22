@@ -1,0 +1,31 @@
+.slider-erit{
+  margin-top: 15px;
+}
+.slider-item-erit{
+  height: 380px;
+  width: 100%;
+  position: relative;
+  img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover ;
+  }
+}
+.swiper-pagination-bullet.swiper-pagination-bullet-active{
+  background-color: white;
+
+}.swiper-pagination-bullet{
+   background: #A0A0A0;
+   border: 1px solid #C4C4C4;
+   width: 10px;
+   height: 10px;
+ }
+.swiper-button-next:after{
+    content: url("../slider-images/next.svg");
+}
+.swiper-button-prev:after{
+  content: url("../slider-images/prev.svg");
+}

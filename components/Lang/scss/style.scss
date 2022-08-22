@@ -1,0 +1,53 @@
+.header-lang-btn{
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  position: absolute;
+  left: 0;
+}
+.header-lang{
+  position: relative;
+  -webkit-transition: all 0.2s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -ms-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition:all 0.2s ease 0s;
+  display: flex;
+  align-items: center;
+  &.activeRotate{
+    transform: rotate(180deg);
+  }
+  span{
+    font-size: 24px;
+  }
+
+  ul{
+    list-style-type: none;
+  }
+}
+.lang-list {
+  overflow: hidden;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  height: 20px;
+  -webkit-transition: all 0.2s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -ms-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition:all 0.2s ease 0s;
+  .langLink{
+    text-decoration: none;
+    color: black;
+    padding: 2px 3px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  &.activeListLang{
+    height: 70px;
+    z-index: 3;
+  }
+}

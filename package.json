@@ -1,0 +1,28 @@
+{
+  "name": "erit.am",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@babel/plugin-proposal-decorators": "^7.18.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-media": "^1.10.0",
+    "swiper": "^8.3.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.17",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.1",
+    "node-sass": "^7.0.1",
+    "normalize.css": "^8.0.1",
+    "react-router-dom": "^6.3.0",
+    "sass": "^1.54.5",
+    "vite": "^3.0.7"
+  }
+}
