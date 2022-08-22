@@ -51,7 +51,6 @@ function Header(props) {
         <h1 className="header-title">
           Հրազդանը՝ ՀՀ երիտասարդական մայրաքաղաք - 2022
         </h1>
-        hello world
         <Media query="(min-width:1024px)">
           {(matches) =>
             matches ? (
