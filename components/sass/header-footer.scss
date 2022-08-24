@@ -87,17 +87,10 @@ $prim:black;
     flex-direction: column;
   }
   .header-footer{
-    -webkit-transform: translateY(-100%);
-    -moz-transform: translateY(-100%);
-    -ms-transform: translateY(-100%);
-    -o-transform: translateY(-100%);
-    transform: translateY(-100%);
-    &.activeHeaderFooter {
-      -webkit-transform: translateY(0%);
-      -moz-transform: translateY(0%);
-      -ms-transform: translateY(-0%);
-      -o-transform: translateY(-0%);
-      transform: translateY(0%);
-    }
+    display: flex;
+  }
+    .header-footer.activeHeaderFooter {
+      display: none;
+
   }
 }

@@ -1,5 +1,6 @@
 .slider-erit{
   margin-top: 15px;
+  position: relative;
 }
 .slider-item-erit{
   height: 380px;
@@ -12,6 +13,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover ;
+    object-position: center;
   }
 }
 .swiper-pagination-bullet.swiper-pagination-bullet-active{
@@ -28,4 +30,18 @@
 }
 .swiper-button-prev:after{
   content: url("../slider-images/prev.svg");
+}
+.marquee-erit{
+  background: linear-gradient(90deg, #2E22AC 0%, #DE4B9C 100%);
+  height: 50px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 27px;
+  color: #FFFFFF;
+  h4{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #FFFFFF;
+  }
 }

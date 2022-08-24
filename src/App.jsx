@@ -6,22 +6,32 @@ import {useState} from "react";
 import ErrorPage from "../components/ErrorPage/ErrorPage.jsx";
 import SubHeader from "../pages/SubHeader/SubHeader.jsx";
 
-function App(props) {
-    const [lang,setLang]=useState('hy')
-    const [page,setPage]=useState('/')
-    const [headerOpen,setHeaderOpen] = useState(false)
-  return (
-    <>
-        <Header lang={lang} setLang={setLang} headerOpen={headerOpen} setHeaderOpen={setHeaderOpen} />
-        <SubHeader></SubHeader>
-        <Routes>
-            <Route  path={'/'} element={<Navigate to={lang+'/'}/>}></Route>
-            <Route  path={lang} element={<Home/>}></Route>
-            <Route  path={`about/${lang}/`} element={<About/>}></Route>
-            <Route path='*' element={<ErrorPage/>}></Route>
-        </Routes>
-    </>
-  )
+function App({Linksp,marquee, titleHeader}) {
+    const [lang, setLang] = useState("hy");
+    const [headerOpen, setHeaderOpen] = useState(false);
+    const headerTitle = (() => lang == 'ru' ? titleHeader.ru : lang == 'hy' ? titleHeader.hy : lang == 'en' ? titleHeader.en : '')()
+
+    return (
+        <>
+            <Header
+                lang={lang}
+                headerTitle={headerTitle}
+                linksp={Linksp}
+                setLang={setLang}
+                headerOpen={headerOpen}
+                setHeaderOpen={setHeaderOpen}
+            />
+            <SubHeader marquee={marquee}
+                       lang={lang}
+            ></SubHeader>
+            <Routes>
+                <Route path={"/"} element={<Navigate to={lang + "/"}/>}></Route>
+                <Route path={lang} element={<Home/>}></Route>
+                <Route path={`about/${lang}/`} element={<About/>}></Route>
+                <Route path="*" element={<ErrorPage/>}></Route>
+            </Routes>
+        </>
+    );
 }
 
-export default App
+export default App;
