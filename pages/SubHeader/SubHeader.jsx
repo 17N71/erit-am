@@ -16,6 +16,9 @@ import fourth from './slider-images/4.jpg'
 import five from './slider-images/5.jpg'
 import Repost from "../../components/Repost/Repost.jsx";
 import Marquee from "react-fast-marquee";
+import MediaHeader from "../../components/MediaHeader/MediaHeader.jsx";
+import Lang from "../../components/Lang/Lang.jsx";
+import Media from "react-media";
 
 function SubHeader({marquee, lang}) {
     return (
@@ -51,27 +54,39 @@ function SubHeader({marquee, lang}) {
                     </SwiperSlide>
                 </Swiper>
             </div>
-            <Marquee
-                gradient={true}
-                gradientColor={[46, 34, 172]}
-                gradientWidth={200}
-                play={true} speed={120} className={'marquee-erit'}>
-                <h4>{lang == "hy" ?
+            <div className="marquee-container">
+            <div className="marquee-title">
+                <span >
+                {lang == "hy" ?
                     marquee.hy.title
                     : lang == "ru"
                         ? marquee.ru.title
                         : lang == "en"
                             ? marquee.en.title
                             : ""}
-                </h4>
-                {lang == "hy" ?
-                    marquee.hy.desc
-                    : lang == "ru" ?
-                        marquee.ru.desc
-                        : lang == "en"
-                            ? marquee.en.desc
-                            : ""} </Marquee>
-            <Repost/>
+                </span>
+                <Marquee
+                    gradient={true}
+                    gradientColor={[46, 34, 172]}
+                    gradientWidth={200}
+                    play={true} speed={120} className={'marquee-erit'}>
+
+                    {lang == "hy" ?
+                        marquee.hy.desc
+                        : lang == "ru" ?
+                            marquee.ru.desc
+                            : lang == "en"
+                                ? marquee.en.desc
+                                : ""} </Marquee>
+            </div>
+                <Media query="(min-width:1024px)">
+                    {(matches) => matches ? (
+                            <Repost/>
+                        ) : ("")}
+                </Media>
+
+            </div>
+
         </>
     );
 }
