@@ -15,8 +15,7 @@ import third from './slider-images/3.jpg'
 import fourth from './slider-images/4.jpg'
 import five from './slider-images/5.jpg'
 import Repost from "../../components/Repost/Repost.jsx";
-import Marquee from "react-fast-marquee"
-import Media from "react-media";
+import Marquee from "react-fast-marquee";
 
 function SubHeader({marquee, lang}) {
     return (
@@ -52,40 +51,27 @@ function SubHeader({marquee, lang}) {
                     </SwiperSlide>
                 </Swiper>
             </div>
-            <Media query="(min-width:1024px)">
-                {(matches) => matches ? (
-                    <Repost/>
-                ) : ("")}
-            </Media>
-            <div className="marquee-container">
-            <div className="marquee-title">
-                <span >
-                {lang == "hy" ?
+            <Marquee
+                gradient={true}
+                gradientColor={[46, 34, 172]}
+                gradientWidth={200}
+                play={true} speed={120} className={'marquee-erit'}>
+                <h4>{lang == "hy" ?
                     marquee.hy.title
                     : lang == "ru"
                         ? marquee.ru.title
                         : lang == "en"
                             ? marquee.en.title
                             : ""}
-                </span>
-            </div>
-                <Marquee
-                    gradient={true}
-                    gradientColor={[46, 34, 172]}
-                    gradientWidth={200}
-                    play={true} speed={120} className={'marquee-erit'}>
-
-                    {lang == "hy" ?
-                        marquee.hy.desc
-                        : lang == "ru" ?
-                            marquee.ru.desc
-                            : lang == "en"
-                                ? marquee.en.desc
-                                : ""} </Marquee>
-
-
-            </div>
-
+                </h4>
+                {lang == "hy" ?
+                    marquee.hy.desc
+                    : lang == "ru" ?
+                        marquee.ru.desc
+                        : lang == "en"
+                            ? marquee.en.desc
+                            : ""} </Marquee>
+            <Repost/>
         </>
     );
 }
