@@ -88,6 +88,7 @@ $prim:black;
   }
   .header-footer{
     display: flex;
+    flex-direction: column;
   }
     .header-footer.activeHeaderFooter {
       display: none;

@@ -10,6 +10,6 @@ import {Linksp, titleHeader, marquee} from './Linksp/Linksp'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
-        <App Linksp={Linksp} marquee={marquee} titleHeader={titleHeader}/>
+        <App Linksp={Linksp} marquee={marquee} X titleHeader={titleHeader} />
     </Router>
 )

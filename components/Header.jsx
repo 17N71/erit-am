@@ -5,10 +5,11 @@ import {Link} from "react-router-dom";
 import Logo from "../src/assets/logo/eritlogo.png";
 import MediaHeader from "./MediaHeader/MediaHeader.jsx";
 import Lang from "./Lang/Lang.jsx";
-import {useState} from "react";
+import React, {useState} from "react";
 import List from "./List/List";
+import Repost from "./Repost/Repost.jsx";
 
-function Header({linksp, headerOpen, setHeaderOpen, lang, setLang, headerTitle}) {
+function Header({linksp, headerOpen, setHeaderOpen, lang, setLang,LinksTo, headerTitle}) {
     const [search, setSearch] = useState(false);
     const [rotate, setRotate] = useState(false);
     const [menuBurger, setMenuBurger] = useState(false);
@@ -48,7 +49,8 @@ function Header({linksp, headerOpen, setHeaderOpen, lang, setLang, headerTitle})
                 {headerTitle}
             </h1>
             <Media query="(min-width:1024px)">
-                {(matches) => matches ? (<div className="langAndSearch">
+                {(matches) => matches ? (
+                    <div className="langAndSearch">
                     <MediaHeader
                         rotate={rotate}
                         formClassName={search ? "visible-form" : ""}
@@ -87,9 +89,16 @@ function Header({linksp, headerOpen, setHeaderOpen, lang, setLang, headerTitle})
                     </Media>
                 </div>
                 <List
+                    lang={lang}
+                    LinksTo={LinksTo}
                     headerLinks={lang == "en" ? linksp.en : lang == "ru" ? linksp.ru : lang == "hy" ? linksp.hy : ""}
                 />
             </nav>
+            <Media query="(max-width:1024px)">
+                {(matches) => matches ? (
+                    <Repost/>
+                ) : ("")}
+            </Media>
         </div>
     </header>);
 }

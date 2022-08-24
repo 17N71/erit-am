@@ -105,8 +105,10 @@ header.header{
 }
 @media screen and (max-width: 630px) {
   .header-header{
+    padding: 0 25px 0 15px;
     h1.header-title{
-      font-size: 15px;
+      font-size: 16px;
+      padding: 0 2px;
     }
   }
   header.header{
@@ -114,4 +116,11 @@ header.header{
       max-width: 90px;
   }
   }
+}
+@media screen and (max-width: 550px){
+  header.header{
+    .logo{
+      max-width: 70px;
+    }
+    }
 }
