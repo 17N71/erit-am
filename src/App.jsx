@@ -10,7 +10,6 @@ function App({Linksp,marquee, titleHeader }) {
     const [lang, setLang] = useState("hy");
     const [headerOpen, setHeaderOpen] = useState(false);
     const headerTitle = (() => lang == 'ru' ? titleHeader.ru : lang == 'hy' ? titleHeader.hy : lang == 'en' ? titleHeader.en : '')()
-
     return (
         <>
             <Header

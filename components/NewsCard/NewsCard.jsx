@@ -13,7 +13,7 @@ function NewsCard({image,lang,Linksp}) {
                 return (
                     <Media query='(min-width:580px)'>
                         {matches => matches?  <Atropos className={'atropos-card-item-erit'} shadow={false}>
-                            <Link to={`/${lang}/${Linksp.en[0].to}/${index+1}`}>
+                            <Link className="news-link" to={`/${lang}/${Linksp[lang][0].to}/${index+1}`}>
                             <div className="card-item">
                                 <div className="card-image">
                                     <div className="card-date"  data-atropos-offset="1">{new Date().toDateString()}</div>
