@@ -4,16 +4,15 @@ import Atropos from "atropos/react";
 import Media from "react-media";
 import {Link} from "react-router-dom";
 
-function NewsCard({image,lang,Linksp}) {
+function NewsCard({image,lang,Links}) {
 
     return (
         <>
             {image.map(function (img,index) {
-
                 return (
-                    <Media query='(min-width:580px)'>
-                        {matches => matches?  <Atropos className={'atropos-card-item-erit'} shadow={false}>
-                            <Link className="news-link" to={`/${lang}/${Linksp[lang][0].to}/${index+1}`}>
+                    <Media query='(min-width:580px)' >
+                        {matches => matches?  <Atropos   className={'atropos-card-item-erit'} shadow={false}>
+                            <Link className="news-link" to={`/${lang}/${Links[lang][0].to}/${Links[lang][index].id}`} >
                             <div className="card-item">
                                 <div className="card-image">
                                     <div className="card-date"  data-atropos-offset="1">{new Date().toDateString()}</div>

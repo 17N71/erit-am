@@ -16,6 +16,7 @@ import fourth from './slider-images/4.jpg'
 import five from './slider-images/5.jpg'
 import Repost from "../../components/Repost/Repost.jsx";
 import Marquee from "react-fast-marquee";
+import Media from "react-media";
 
 function SubHeader({marquee, lang}) {
     return (
@@ -71,7 +72,11 @@ function SubHeader({marquee, lang}) {
                         : lang == "en"
                             ? marquee.en.desc
                             : ""} </Marquee>
-            <Repost/>
+            <Media query="(min-width:1024px)">
+            {(matches) => matches ? (
+                <Repost/>
+            ) : ("")}
+            </Media>
         </>
     );
 }

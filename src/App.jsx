@@ -6,7 +6,7 @@ import {useState} from "react";
 import ErrorPage from "../components/ErrorPage/ErrorPage.jsx";
 import SubHeader from "../pages/SubHeader/SubHeader.jsx";
 import 'atropos/scss'
-function App({Linksp,marquee, titleHeader }) {
+function App({Links,marquee, titleHeader }) {
     const [lang, setLang] = useState("hy");
     const [headerOpen, setHeaderOpen] = useState(false);
     const headerTitle = (() => lang == 'ru' ? titleHeader.ru : lang == 'hy' ? titleHeader.hy : lang == 'en' ? titleHeader.en : '')()
@@ -15,7 +15,7 @@ function App({Linksp,marquee, titleHeader }) {
             <Header
                 lang={lang}
                 headerTitle={headerTitle}
-                linksp={Linksp}
+                Links={Links}
                 setLang={setLang}
                 headerOpen={headerOpen}
                 setHeaderOpen={setHeaderOpen}
@@ -23,7 +23,7 @@ function App({Linksp,marquee, titleHeader }) {
             <SubHeader marquee={marquee} lang={lang}></SubHeader>
             <Routes>
                 <Route path={"/"} element={<Navigate to={lang + "/"}/>}></Route>
-                <Route path={lang} element={<Home Linksp={Linksp} lang={lang}/>}></Route>
+                <Route path={lang} element={<Home Links={Links} lang={lang}/>}></Route>
                 <Route path={`${lang}/about`} element={<About/>}></Route>
                 <Route path="*" element={<ErrorPage/>}></Route>
             </Routes>

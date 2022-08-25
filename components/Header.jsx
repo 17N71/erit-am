@@ -9,7 +9,7 @@ import React, {useState} from "react";
 import List from "./List/List";
 import Repost from "./Repost/Repost.jsx";
 
-function Header({linksp, headerOpen, setHeaderOpen, lang, setLang,LinksTo, headerTitle}) {
+function Header({Links, headerOpen, setHeaderOpen, lang, setLang,LinksTo, headerTitle}) {
     const [search, setSearch] = useState(false);
     const [rotate, setRotate] = useState(false);
     const [menuBurger, setMenuBurger] = useState(false);
@@ -91,14 +91,13 @@ function Header({linksp, headerOpen, setHeaderOpen, lang, setLang,LinksTo, heade
                 <List
                     lang={lang}
                     LinksTo={LinksTo}
-                    headerLinks={lang == "en" ? linksp.en : lang == "ru" ? linksp.ru : lang == "hy" ? linksp.hy : ""}
+                    headerLinks={lang == "en" ? Links.en : lang == "ru" ? Links.ru : lang == "hy" ? Links.hy : ""}
                 />
+                <Media query="(max-width:1024px)">
+                    {(matches) => matches ? (<Repost/>) : ""}
+                </Media>
             </nav>
-            <Media query="(max-width:1024px)">
-                {(matches) => matches ? (
-                    <Repost/>
-                ) : ("")}
-            </Media>
+
         </div>
     </header>);
 }

@@ -6,10 +6,10 @@ import 'normalize.css'
 import './assets/icos/style.css'
 import './assets/scss/style.scss'
 import './assets/fonts/SegoeUI/stylesheet.css'
-import {Linksp, titleHeader, marquee} from './Linksp/Linksp'
+import {Links, titleHeader, marquee} from './Links/Links.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
-        <App Linksp={Linksp} marquee={marquee} X titleHeader={titleHeader} />
+        <App Links={Links} marquee={marquee} X titleHeader={titleHeader} />
     </Router>
 )
