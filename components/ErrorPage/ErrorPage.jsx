@@ -1,9 +1,9 @@
 import React from 'react';
-import './scss/error.scss'
+import s from './scss/error.module.scss'
 function ErrorPage() {
     return (
-        <div className={'error-container'}>
-            <h2 className={'error-title'}>Error 404</h2>
+        <div className={s['error-container']}>
+            <h2 className={s['error-title']}>Error 404</h2>
         </div>
     );
 }

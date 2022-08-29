@@ -72,7 +72,7 @@ function SubHeader({marquee, lang}) {
                         : lang == "en"
                             ? marquee.en.desc
                             : ""} </Marquee>
-            <Media query="(min-width:1024px)">
+            <Media query="(min-width:1025px)">
             {(matches) => matches ? (
                 <Repost/>
             ) : ("")}

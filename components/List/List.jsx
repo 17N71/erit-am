@@ -6,7 +6,7 @@ export default function List({ headerLinks,lang }) {
       {headerLinks.map((link) => {
         return (
           <li key={link.id}>
-            <NavLink to={`/${lang}/${link.to}`} activeClassName="selected" className="header-link" >
+            <NavLink  to={`/${lang}/${link.to}`} className="header-link" >
               {link.desc}
             </NavLink>
           </li>

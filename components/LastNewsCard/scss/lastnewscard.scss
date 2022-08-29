@@ -58,14 +58,10 @@
     flex:1 1 calc(33.333% - 28px);
   }
 }
-@media screen and (max-width: 991px){
-  .atropos-card-item-erit{
-    flex:1 1 calc(50% - 28px);
-    max-width: none;
-  }
-}
-@media screen and (max-width: 720px){
-  .atropos-card-item-erit{
-    flex:1 1 calc(100% - 28px);
+@media screen and (max-width: 1024px) {
+  .mini-slider-erit{
+    max-width: 450px;
+    flex: 0 0 auto;
+
   }
 }

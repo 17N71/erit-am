@@ -1,10 +1,12 @@
 import React from 'react';
 import './scss/home.scss'
-import News from "../../components/News/News.jsx";
-function Home({lang,Links}) {
+import LastNews from "../../components/LastNews/LastNews.jsx";
+import NewsCalendar from "../../components/NewsCalendar/NewsCalendar.jsx";
+function Home({lang,Links,News}) {
     return (
         <main className={"main"}>
-                <News lang={lang} Links={Links} />
+                <LastNews lang={lang} Links={Links} />
+                <NewsCalendar News={News} lang={lang} />
         </main>
     );
 }

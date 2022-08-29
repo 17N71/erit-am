@@ -7,9 +7,10 @@ import './assets/icos/style.css'
 import './assets/scss/style.scss'
 import './assets/fonts/SegoeUI/stylesheet.css'
 import {Links, titleHeader, marquee} from './Links/Links.js'
+import { News} from './Links/News.js'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <Router>
-        <App Links={Links} marquee={marquee} X titleHeader={titleHeader} />
+        <App Links={Links} marquee={marquee} X titleHeader={titleHeader} News={News} />
     </Router>
 )
