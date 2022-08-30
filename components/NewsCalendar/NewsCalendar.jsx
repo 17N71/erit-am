@@ -1,8 +1,8 @@
 import React from 'react';
 import './scss/newscalendar.scss';
-import Calendar from "react-calendar";
-import 'react-calendar/dist/Calendar.css';
 import NewNews from "../NewNews/NewNews.jsx";
+import EritCalendar from "../EritCalendar/EritCalendar.jsx";
+import Library from "../Library/Library.jsx";
 
 function NewsCalendar({News,lang}) {
     return (
@@ -18,8 +18,8 @@ function NewsCalendar({News,lang}) {
                         <NewNews News={News} lang={lang} />
                     </section>
                     <aside className="NewsCalendar-container-aside">
-                        <Calendar />
-
+                        <EritCalendar />
+                        <Library />
                     </aside>
                 </div>
             </div>

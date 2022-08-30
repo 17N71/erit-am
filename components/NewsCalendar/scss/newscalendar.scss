@@ -35,3 +35,16 @@
     flex-direction: column;
     gap: 45px;
 }
+@media screen and (max-width: 991px){
+    .NewsCalendar-container{
+       grid-template-columns: 1fr;
+    }
+    .NewsCalendar-container-aside{
+        order: -1;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: minmax(auto,290px);
+
+    }
+    .NewsCalendar-container-content{
+    }
+}

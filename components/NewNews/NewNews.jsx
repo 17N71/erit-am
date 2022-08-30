@@ -4,13 +4,14 @@ import second from './images/secondnews.png'
 import third from './images/thirdnews.png'
 import fourth from './images/fourthnews.png'
 import five from './images/fivenews.png'
+import './scss/newnews.scss'
 function NewNews({News,lang}) {
     const newNews = [first,second,third,fourth,five]
     return (
         <>
             {newNews.map((item,index)=>{
                 return (
-                    <div className={'newNews-card'}>
+                    <div className={'newNews-card'} key={index}>
                         <div className="newNews-image"><img src={newNews[index]} alt={index} /></div>
                         <div className="newNews-text">
                             <div className="newNews-title"><h4>{lang=="hy"?News.hy.title:lang=="ru"?News.ru.title:lang=="en"?News.en.title:""}</h4></div>

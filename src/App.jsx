@@ -24,7 +24,8 @@ function App({Links,marquee, titleHeader , News}) {
             <Routes>
                 <Route path={"/"} element={<Navigate to={lang + "/"}/>}></Route>
                 <Route path={lang} element={<Home News={News} Links={Links} lang={lang}/>}></Route>
-                <Route path={`${lang}/about`} element={<About/>}></Route>
+                <Route path={`${lang}/news`} element={<About/>}></Route>
+                <Route path={`${lang}/news/:id`} element={<About/>}></Route>
                 <Route path="*" element={<ErrorPage/>}></Route>
             </Routes>
         </>
