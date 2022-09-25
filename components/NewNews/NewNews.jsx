@@ -1,33 +1,34 @@
-import React from 'react';
-import first from './images/firstnews.png'
-import second from './images/secondnews.png'
-import third from './images/thirdnews.png'
-import fourth from './images/fourthnews.png'
-import five from './images/fivenews.png'
-import './scss/newnews.scss'
+import React, { useContext } from 'react';
+import nwc from './scss/newnews.module.scss'
+import { Link } from 'react-router-dom';
+import { Typography } from '@mui/material';
+import { newsImageContext } from '../../src/App';
 function NewNews({News,lang}) {
-    const newNews = [first,second,third,fourth,five]
+    const {newNews,images} = useContext(newsImageContext)
     return (
         <>
             {newNews.map((item,index)=>{
                 return (
-                    <div className={'newNews-card'} key={index}>
-                        <div className="newNews-image"><img src={newNews[index]} alt={index} /></div>
-                        <div className="newNews-text">
-                            <div className="newNews-title"><h4>{lang=="hy"?News.hy.title:lang=="ru"?News.ru.title:lang=="en"?News.en.title:""}</h4></div>
-                            <div className="newNews-info">
-                                <div className="newNews-date">{new Date().toDateString()}</div>
-                                <div className="newNews-views"><span className={'icon icon-views'}></span>{lang=="hy"?News.hy.views:lang=="ru"?News.ru.views:lang=="en"?News.en.views:""}</div>
+                    <React.Fragment key={index}>
+                    <Link to={`views/${index}`} className={nwc['newNews-card']}>
+                        <div className={nwc["newNews-image"]}><img src={newNews[index]} alt={index} /></div>
+                        <div className={nwc["newNews-text"]}>
+                            <Typography variant='h6'className={nwc["newNews-title"]} >{lang=="hy"?News.hy.title:lang=="ru"?News.ru.title:lang=="en"?News.en.title:""}</Typography>
+                            <div className={nwc["newNews-info"]}>
+                                <div className={nwc["newNews-date"]}>{new Date().toDateString()},</div>
+                                <div className={nwc["newNews-views"]}><span className={'icon icon-views'}></span>{lang=="hy"?News.hy.views:lang=="ru"?News.ru.views:lang=="en"?News.en.views:""}</div>
                             </div>
-                            <div className="newNews-desc">
+                            <div className={nwc["newNews-desc"]}>
                                 {lang=="hy"?News.hy.title:lang=="ru"?News.ru.title:lang=="en"?News.en.title:""}
                             </div>
                         </div>
-                    </div>
+                    </Link>
+                    <hr />
+                    </React.Fragment>
             )
             })}
         </>
     );
 }
 
-export default NewNews;
+export default NewNews;  

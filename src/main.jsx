@@ -7,10 +7,13 @@ import './assets/icos/style.css'
 import './assets/scss/style.scss'
 import './assets/fonts/SegoeUI/stylesheet.css'
 import {Links, titleHeader, marquee} from './Links/Links.js'
-import { News} from './Links/News.js'
-
+import { News ,LastNews} from './Links/News.js'
+import { createContext } from 'react';
+export const lastNewsContext = createContext(null)
 ReactDOM.createRoot(document.getElementById('root')).render(
-    <Router>
-        <App Links={Links} marquee={marquee} X titleHeader={titleHeader} News={News} />
-    </Router>
+        <lastNewsContext.Provider value={LastNews}>
+         <Router>
+                <App Links={Links} marquee={marquee} X titleHeader={titleHeader} News={News} />
+        </Router>
+        </lastNewsContext.Provider>
 )
